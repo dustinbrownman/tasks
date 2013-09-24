@@ -1,4 +1,4 @@
-Tasks
+# Tasks
 
 A Ruby on Rails tasks app. Made as part of my learning process at [Epicodus](http://www.epicodus.com/).
 
