@@ -10,5 +10,5 @@
 <%= form_for @task do |f| %>
   <%= f.text_field :name %>
   <%= f.hidden_field(:list_id) %>
-  <%= f.submit %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 <% end %>

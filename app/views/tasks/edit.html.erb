@@ -2,7 +2,7 @@
 
 <%= form_for @task do |f| %>
   <%= f.hidden_field :complete, value: true %>
-  <%= f.submit 'Mission accomplished!' %>
+  <%= f.submit 'Mission accomplished!', :class => 'btn btn-success' %>
 <% end %>
 
 <h4><%= link_to "Give up and delete. You're not going to finish it anyway.", @task, :method => :delete, :data => { :confirm => 'You should feel ashamed of yourself.' } %></h4>
