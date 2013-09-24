@@ -1,0 +1,14 @@
+<% if @task.errors.any? %>
+  <h4>Your task has some serious issues...</h4>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end%>
+  </ul>
+<% end%>
+
+<%= form_for @task do |f| %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field(:list_id) %>
+  <%= f.submit %>
+<% end %>

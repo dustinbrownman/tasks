@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: wikitasks_development
+
+test:
+  adapter: postgresql
+  database: wikitasks_test
