@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootstrap-sass'
+gem 'rails_12factor'
 
 group :test, :development do
   gem 'rspec-rails'
