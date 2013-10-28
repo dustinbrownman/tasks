@@ -2,13 +2,16 @@
 
 <%= render 'tasks/form' %>
 
-<ul>
+<ul class="list-group">
   <% @tasks_not_complete.each do |task| %>
-    <li><%= link_to task.name, edit_task_path(task) %></li>
+    <li class="list-group-item">
+    	<span><%= task.name %></span>
+    	<%= link_to 'edit', edit_task_path(task) %>
+    </li>
   <% end %>
 </ul>
 
-<h4>Things I totally crushed:</h4>
+<h4>Complete:</h4>
 
 <ul>
   <% @tasks_complete.each do |task| %>
@@ -16,6 +19,6 @@
   <% end %>
 </ul>
 
-<p><%= link_to "Begone, foul list!", @list, :method => :delete, :data => { :confirm => 'Poof!' } %></p>
+<p><%= link_to "Delete List", @list, :method => :delete, :data => { :confirm => 'Poof!' } %></p>
 
-<p><%= link_to "10,000-foot view", lists_path %></p>
+<p><%= link_to "Show all lists", lists_path %></p>

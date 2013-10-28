@@ -7,7 +7,7 @@
   </ul>
 <% end%>
 
-<%= form_for @list do |f| %>
-  <%= f.text_field :name %>
+<%= form_for @list, :class => 'form-group' do |f| %>
+  <%= f.text_field :name, :class => 'from-control' %>
   <%= f.button :submit, :class => 'btn btn-success' %>
 <% end %>

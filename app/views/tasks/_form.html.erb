@@ -7,8 +7,8 @@
   </ul>
 <% end%>
 
-<%= form_for @task do |f| %>
-  <%= f.text_field :name %>
+<%= form_for @task, :class => 'from-group' do |f| %>
+  <%= f.text_field :name, :id => 'new-task-input', :class => 'col-lg-6 form-control', :placeholder => 'What do you need to do?' %>
   <%= f.hidden_field(:list_id) %>
-  <%= f.button :submit, :class => 'btn btn-primary' %>
+	<%= f.button :submit, :class => 'btn btn-primary' %>
 <% end %>
