@@ -3,7 +3,7 @@
 This is my first Ruby on Rails app. Built as part of my learning process at
 [Epicodus](http://www.epicodus.com/). My goal is to become more familiar with the Ruby on Rails
 development process, especially the model-view-controller paradigm. This would be a great place to
-impliment some AJAX, though I'm not worrying about that until later. Also need to include a way to
+implement some AJAX, though I'm not worrying about that until later. Also need to include a way to
 delete tasks. The destroy action is in the controller, but I didn't like the way it was implimented,
 so I took it out.
 
