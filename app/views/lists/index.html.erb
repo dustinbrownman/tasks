@@ -1,9 +1,11 @@
-<h2>Lists</h2>
+<div class="col-md-4 col-md-offset-4">
+	<h2>Lists</h2>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list %></li>
-  <% end %>
-</ul>
+	<ul>
+	  <% @lists.each do |list| %>
+	    <li><%= link_to list.name, list %></li>
+	  <% end %>
+	</ul>
+</div>

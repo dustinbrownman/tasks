@@ -1,0 +1,9 @@
+<%= form_for task, :class => 'form-inline' do |f| %>
+	<%= f.hidden_field :name %>
+	<%= f.hidden_field :list_id %>
+	<div class='input-group'>
+		<%= f.check_box :complete %>
+		<%= task.name %>
+		<%= f.submit 'Update', :class => 'btn btn-info btn-xs' %>
+	</div>
+<% end %>

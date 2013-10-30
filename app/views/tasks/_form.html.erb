@@ -1,14 +1,18 @@
-<% if @task.errors.any? %>
-  <h4>Your task has some serious issues...</h4>
-  <ul>
-    <% @task.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end%>
-  </ul>
-<% end%>
+<%= form_for @task do |f| %>
+	<% if @task.errors.any? %>
+	  <h4>Your task has some serious issues...</h4>
+	  <ul>
+	    <% @task.errors.full_messages.each do |message| %>
+	      <li><%= message %></li>
+	    <% end%>
+	  </ul>
+	<% end%>
 
-<%= form_for @task, :class => 'from-group' do |f| %>
-  <%= f.text_field :name, :id => 'new-task-input', :class => 'col-lg-6 form-control', :placeholder => 'What do you need to do?' %>
-  <%= f.hidden_field(:list_id) %>
-	<%= f.button :submit, :class => 'btn btn-primary' %>
+	<%= f.hidden_field :list_id %>
+	<div class='input-group'>
+	  <%= f.text_field :name, :class => 'form-control', :placeholder => 'What do you need to do?' %>
+	  <span class='input-group-btn'>
+			<%= f.button :submit, :class => 'btn btn-info' %>
+		</span>
+	</div>
 <% end %>

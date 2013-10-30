@@ -7,19 +7,14 @@ class TasksController < ApplicationController
       redirect_to @task.list
     else
       @list = @task.list
-      render '/lists/show'
+      render 'lists/show'
     end
   end
 
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    flash[:notice] = "Mission Accomplished.  Well done, soldier!"
     redirect_to @task.list
-  end
-
-  def edit
-    @task = Task.find(params[:id])
   end
 
   def destroy

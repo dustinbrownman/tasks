@@ -1,24 +1,33 @@
 <h2><%= @list.name %></h2>
+<p>
+	<%= link_to "Delete List", @list, :method => :delete, :data => { :confirm => 'Are you sure?' } %> |
+	<%= link_to "Show all lists", lists_path %>
+</p>
 
 <%= render 'tasks/form' %>
 
-<ul class="list-group">
-  <% @tasks_not_complete.each do |task| %>
-    <li class="list-group-item">
-    	<span><%= task.name %></span>
-    	<%= link_to 'edit', edit_task_path(task) %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+	<div class='incomplete-tasks col-md-6'>
+		<h4>Incomplete:</h4>
 
-<h4>Complete:</h4>
+		<ul class="list-group">
+		  <% @list.incomplete_tasks.each do |task| %>
+		    <li class="list-group-item">
+		    	<%= render task %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
 
-<ul>
-  <% @tasks_complete.each do |task| %>
-    <li><%= link_to task.name, edit_task_path(task) %></li>
-  <% end %>
-</ul>
+	<div class='complete-tasks col-md-6' >
+		<h4>Complete:</h4>
 
-<p><%= link_to "Delete List", @list, :method => :delete, :data => { :confirm => 'Poof!' } %></p>
-
-<p><%= link_to "Show all lists", lists_path %></p>
+		<ul class='list-group'>
+		  <% @list.complete_tasks.each do |task| %>
+		    <li class='list-group-item'>
+		    	<%= render task %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>

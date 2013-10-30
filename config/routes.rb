@@ -1,5 +1,5 @@
 Wikitasks::Application.routes.draw do
-  resources :tasks, :except => [:show, :new]
-  resources :lists, :except => [:new]
+  resources :tasks, :only => [:create, :update, :destroy]
+  resources :lists, :except => [:new, :edit, :update]
   root to: 'lists#index'
 end
